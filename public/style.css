@@ -1,0 +1,54 @@
+.jumbotron{
+    background-color:#405DE6;
+    margin-bottom: 0;
+    height: 200px;
+}
+.classTitle{
+    display: flex;
+    height: 75px;
+    background-color: #5851DB;
+    margin-top: 5px;
+    color: white;
+}
+.classTitle h3{
+    padding-top: 30px;
+    margin-left: 10px;
+}
+.classTitle .classInput{
+    width: 30%;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 3%;
+}
+.dueDate{
+    width: 10%;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 3%;
+}
+.assignBtn{
+    color:blue;
+    border: 0;
+    border: solid blue 1px;
+    background-color: white;
+    height: 30px;
+    margin-top: 32px;
+    margin-left: 10px;
+    border-radius: 3px;  
+    width: 7%;
+}
+.deleteBtn{
+    color:red;
+    border: 0;
+    border: solid red 1px;
+    background-color: white;
+    height: 30px;
+    margin-top: 32px;
+    margin-left: 10px;
+    border-radius: 3px;
+    width: 7%;
+}
+#errorMsg{
+    color: red;
+    margin-left: 25%;
+}

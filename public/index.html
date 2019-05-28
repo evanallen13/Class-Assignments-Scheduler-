@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/6.0.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.4/firebase-storage.js"></script>
+    <script defer src="/__/firebase/5.10.1/firebase-firestore.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer type="module"></script>
+  </head>
+ <body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <input type="email" placeholder="Email" id="emailInput">
+      <input type="password" placeholder="Password" id="passwordInput">
+      <button id="authLogInBtn">Log In</button>
+      <button id="authSignUpBtn">Sign Up</button>
+      <br></br>
+      <input type="text" placeholder="Add Class" id="classInput">
+      <button id="addClassBtn">+ Add Class</button>
+      <button id="logOutBtn">Log Out</button>
+      <p id="errorMsg" ></p>
+    </div>
+  </div>
+  <div id="classesDiv"></div>
+
+  </div>
+
+ </body>
+</html>
