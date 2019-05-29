@@ -26,6 +26,12 @@
     margin-top: 30px;
     margin-left: 3%;
 }
+.assignDate{
+    width: 10%;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 3%;    
+}
 .assignBtn{
     color:blue;
     border: 0;
@@ -47,6 +53,9 @@
     margin-left: 10px;
     border-radius: 3px;
     width: 7%;
+}
+.assignmentDiv{
+    background-color: aqua;
 }
 #errorMsg{
     color: red;

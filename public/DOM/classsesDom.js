@@ -12,6 +12,18 @@ export function classFetch(){
         })
     })
 }
+function assignmentFetch(className){
+    const currentUser = firebase.auth().currentUser
+    const db = firebase.firestore();
+    const assignments = db.collection('Assignments')
+    assignments.onSnapshot(docs =>{
+        docs.forEach(function(doc){
+            if(currentUser.email === doc.data().Enrolled && className === doc.data().ClassName){
+                Body(doc.data())
+            }
+        })
+    })
+}
 
 function classDom(className){
     if(document.getElementById(className) === null){
@@ -25,6 +37,7 @@ function classDom(className){
 
         classDiv.appendChild(classTitle)
         classesDiv.appendChild(classDiv)
+        assignmentFetch(className)
     }
 }
 function Title(className){
@@ -43,6 +56,11 @@ function Title(className){
     dueDate.setAttribute('class','dueDate')
     dueDate.setAttribute('placeholder','Due Date')
 
+    const assignDate = document.createElement('input')
+    assignDate.setAttribute('id',`${className}-assignDate`)
+    assignDate.setAttribute('class','assignDate')
+    assignDate.setAttribute('placeholder','Assigned Date')
+
     const addAssignBtn = document.createElement('button')
     addAssignBtn.setAttribute('class','assignBtn')
     addAssignBtn.innerHTML = 'ADD'
@@ -56,16 +74,28 @@ function Title(className){
 
     classTitle.appendChild(h3)
     classTitle.appendChild(input)
+    classTitle.appendChild(assignDate)
     classTitle.appendChild(dueDate)
     classTitle.appendChild(addAssignBtn)
     classTitle.appendChild(deleteBtn)
     return classTitle
 }
+function Body(assignment){
+    const classDiv = document.getElementById(assignment.ClassName)
+    const assignmentDiv = document.createElement('div')
+    assignmentDiv.setAttribute('class','assignmentDiv')
+    const h3 = document.createElement('h3')
+    h3.innerHTML = assignment.Assignment
 
+    assignmentDiv.appendChild(h3)
+    classDiv.appendChild(assignmentDiv)
+}
 function addAssignmentEvent(className){
     const currentUser = firebase.auth().currentUser.email
     const assignmentName = document.getElementById(`${className}-Input`).value    
     const dueDate = new Date(document.getElementById(`${className}-dueDate`).value)
+    const assignDate = new Date(document.getElementById(`${className}-assignDate`).value)
 
-    addAssignment(className,currentUser,assignmentName,dueDate)
+    addAssignment(className,currentUser,assignmentName,dueDate,assignDate)
 }
+

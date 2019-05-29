@@ -1,12 +1,11 @@
-export function addAssignment(className,User,assignName,dueDate){
+export function addAssignment(className,User,assignName,dueDate,assignDate){
     const db = firebase.firestore();
-    const time = firebase.database.ServerValue.TIMESTAMP
     const data = {
         ClassName : className,
         Enrolled : User,
         Assignment : assignName,
         Due : dueDate,
-        Assigned : time
+        Assigned : assignDate
     }
     const docName = `${className}-${User}-${assignName}`
     let setDoc = db.collection('Assignments').doc(docName).set(data)
