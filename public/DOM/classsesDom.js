@@ -84,10 +84,11 @@ function Body(assignment){
     const classDiv = document.getElementById(assignment.ClassName)
     const assignmentDiv = document.createElement('div')
     assignmentDiv.setAttribute('class','assignmentDiv')
-    const h3 = document.createElement('h3')
-    h3.innerHTML = assignment.Assignment
+    assignmentDiv.setAttribute('class','progress-bar')
+    console.log(assignment.Assigned.seconds - assignment.Due.seconds)
+    assignmentDiv.style.width = '60%'
+    assignmentDiv.innerHTML = assignment.Assignment
 
-    assignmentDiv.appendChild(h3)
     classDiv.appendChild(assignmentDiv)
 }
 function addAssignmentEvent(className){
