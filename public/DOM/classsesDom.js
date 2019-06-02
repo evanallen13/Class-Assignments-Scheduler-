@@ -85,9 +85,11 @@ function Body(assignment){
     const assignmentDiv = document.createElement('div')
     assignmentDiv.setAttribute('class','assignmentDiv')
     assignmentDiv.setAttribute('class','progress-bar')
-    console.log(assignment.Assigned.seconds - assignment.Due.seconds)
-    assignmentDiv.style.width = '60%'
-    assignmentDiv.innerHTML = assignment.Assignment
+    const percent = progressWidth(assignment.Assigned.seconds,assignment.Due.seconds)
+    const percentColor = progressColor(percent)
+    assignmentDiv.style.width = `${percent}%`
+    assignmentDiv.style.backgroundColor = percentColor
+    assignmentDiv.innerHTML = `${assignment.Assignment}  ${percent}%`
 
     classDiv.appendChild(assignmentDiv)
 }
@@ -98,5 +100,20 @@ function addAssignmentEvent(className){
     const assignDate = new Date(document.getElementById(`${className}-assignDate`).value)
 
     addAssignment(className,currentUser,assignmentName,dueDate,assignDate)
+}
+
+function progressWidth(assigned,due){
+    const current = new Date().getTime()/1000
+    return (current/(due - assigned))/100
+
+}
+function progressColor(percentage){
+    if(percentage < 50){
+        return 'green'
+    }else if(percentage >= 50 && percentage < 80){
+        return 'yellow'
+    }else{
+        return 'red'
+    }
 }
 

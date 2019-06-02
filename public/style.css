@@ -61,3 +61,7 @@
     color: red;
     margin-left: 25%;
 }
+.progress-bar{
+    height: 50px;
+    color: black;
+}
