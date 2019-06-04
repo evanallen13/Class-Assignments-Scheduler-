@@ -26,15 +26,19 @@
  <body>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <input type="email" placeholder="Email" id="emailInput">
-      <input type="password" placeholder="Password" id="passwordInput">
-      <button id="authLogInBtn">Log In</button>
-      <button id="authSignUpBtn">Sign Up</button>
-      <br></br>
-      <input type="text" placeholder="Add Class" id="classInput">
-      <button id="addClassBtn">+ Add Class</button>
-      <button id="logOutBtn">Log Out</button>
-      <p id="errorMsg" ></p>
+      <div id="loginBtns">
+        <input type="email" placeholder="Email" id="emailInput">
+        <input type="password" placeholder="Password" id="passwordInput">
+        <button id="authLogInBtn">Log In</button>
+        <button id="authSignUpBtn">Sign Up</button>
+      </div>
+      <div id="classBtns">
+        <input type="text" placeholder="Add Class" id="classInput">
+        <input type="text" placeholder="Class Time" id="classTimeInput">
+        <button id="addClassBtn">+ Add Class</button>
+        <button id="logOutBtn">Log Out</button>
+        <p id="errorMsg" ></p>
+      </div>
     </div>
   </div>
   <div id="classesDiv"></div>

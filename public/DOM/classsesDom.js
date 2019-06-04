@@ -89,9 +89,10 @@ function Body(assignment){
     const percentColor = progressColor(percent)
     assignmentDiv.style.width = `${percent}%`
     assignmentDiv.style.backgroundColor = percentColor
-    assignmentDiv.innerHTML = `${assignment.Assignment}  ${percent}%`
-
-    classDiv.appendChild(assignmentDiv)
+    assignmentDiv.innerHTML = `${assignment.Assignment}  ${Math.round(percent)}%`
+    if(percent < 100){
+        classDiv.appendChild(assignmentDiv)
+    }
 }
 function addAssignmentEvent(className){
     const currentUser = firebase.auth().currentUser.email
@@ -104,7 +105,7 @@ function addAssignmentEvent(className){
 
 function progressWidth(assigned,due){
     const current = new Date().getTime()/1000
-    return (current/(due - assigned))/100
+    return ((due - current)/(current - assigned))*100
 
 }
 function progressColor(percentage){

@@ -1,7 +1,15 @@
 .jumbotron{
-    background-color:#405DE6;
+    background-color:#5851DB;
     margin-bottom: 0;
-    height: 200px;
+    height: 100px;
+}
+#loginBtns{
+    height: 0;
+    visibility: hidden;
+}
+#classBtns{
+    height: 50;
+    visibility: visible;    
 }
 .classTitle{
     display: flex;
@@ -58,7 +66,7 @@
     background-color: aqua;
 }
 #errorMsg{
-    color: red;
+    color: white;
     margin-left: 25%;
 }
 .progress-bar{

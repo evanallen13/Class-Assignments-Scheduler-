@@ -6,12 +6,21 @@ const authLogInBtn = document.getElementById('authLogInBtn')
 const authSignUpBtn = document.getElementById('authSignUpBtn')
 const logOutBtn = document.getElementById('logOutBtn')
 const addClassBtn = document.getElementById('addClassBtn')
+const loginBtns = document.getElementById('loginBtns')
+const classBtns = document.getElementById('classBtns')
 
 firebase.auth().onAuthStateChanged(function(currentUser) {
     if (currentUser) {
+      loginBtns.style.visibility = 'hidden'
+      loginBtns.style.height = '0'
+      classBtns.style.height = '50px'
+      classBtns.style.visibility = 'visible'
       classFetch()
     } else {
-      console.log('Log in')
+      classBtns.style.height = '0'
+      classBtns.style.visibility = 'hidden'
+      loginBtns.style.visibility = 'visible'
+      loginBtns.style.height = '50px'
     }
   });
 
